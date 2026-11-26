@@ -37,8 +37,8 @@
                 if (Console.KeyAvailable)
                 {
                     var key = Console.ReadKey(true).Key;
-                    if (key == ConsoleKey.LeftArrow && playerX > 1) playerX--;
-                    if (key == ConsoleKey.RightArrow && playerX < roadWidth - 1) playerX++;
+                    if ((key == ConsoleKey.LeftArrow && playerX > 1) || (key == ConsoleKey.A && playerX < roadWidth)) playerX--;
+                    if ((key == ConsoleKey.RightArrow && playerX < roadWidth - 1) || (key == ConsoleKey.D && playerX < roadWidth)) playerX++;
                 }
 
                 // Erase old player position & draw new
